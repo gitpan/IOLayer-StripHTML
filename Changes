@@ -1,4 +1,6 @@
 Revision history for Perl module IOLayer::StripHTML.
 
+0.02	Fri Jun  7 23:18:02 2002
+	- use HTML::Parser::eof() to flush input
 0.01
 	- original version; created by hand.

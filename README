@@ -1,4 +1,4 @@
-IOLayer::StripHTML version 0.01
+IOLayer::StripHTML version 0.02
 ===============================
 
 This package implements a PerlIO layer, for reading files only. It

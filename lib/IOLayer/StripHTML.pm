@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use HTML::Parser 3.00;
 
-our $VERSION = 0.01;
+our $VERSION = 0.02;
 
 sub PUSHED {
     my ($class, $mode, $fh) = @_;
@@ -46,6 +46,7 @@ sub FILL {
     return undef unless defined $line;
     $self->{buffer}->() = '';
     $self->{parser}->parse($line) or return undef;
+    $self->{parser}->eof;
     return $self->{buffer}->();
 }
 
@@ -55,7 +56,7 @@ __END__
 
 =head1 NAME
 
-IOLayer::StripHTML - PerlIO layer to strip HTML from an input file
+IOLayer::StripHTML - PerlIO layer to strip HTML tags from an input file
 
 =head1 SYNOPSIS
 
